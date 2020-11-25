@@ -1,11 +1,7 @@
-const Character = () => {
-  let x = 0;
-  let y = 0;
-
-  const setPosition = (x, y) => {
+class Character {
+  constructor(x, y) {
+    console.log({ x, y });
     this.x = x;
     this.y = y;
   }
 }
-
-export default Character;

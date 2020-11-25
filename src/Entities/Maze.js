@@ -12,9 +12,9 @@ class Maze {
     return {
       maze: [
         [START, PATH, PATH, PATH, PATH],
-        [BLOCK, BLOCK, PATH, PATH, BLOCK],
-        [BLOCK, BLOCK, PATH, PATH, BLOCK],
-        [PATH, PATH, PATH, PATH, BLOCK],
+        [BLOCK, BLOCK, PATH, BLOCK, BLOCK],
+        [BLOCK, BLOCK, PATH, BLOCK, BLOCK],
+        [PATH, PATH, PATH, BLOCK, BLOCK],
         [BLOCK, BLOCK, PATH, PATH, END],
       ],
       moves: 10,

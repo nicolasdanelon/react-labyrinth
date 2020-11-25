@@ -1,14 +1,29 @@
+import { useEffect } from 'react';
 import MazeGame from '../../Entities/Game'
 import Maze from '../../Components/Maze';
+import Player from '../../Components/Player';
 
-const Game = ({ difficulty }) => {
+let playerX = null;
+let playerY = null;
+let game = null;
+
+const mazePosition = document.getElementById('maze');
+
+const Game = ({ difficulty, position }) => {
   const maze = new MazeGame(difficulty);
-  const game = maze.start();
+  game = maze.start();
+
+  if (game !== null && mazePosition !== null) {
+    game.setPlayerInitialPosition(mazePosition.offsetLeft, mazePosition.offsetTop);
+    playerX = mazePosition.offsetLeft;
+    playerY = mazePosition.offsetTop
+  }
 
   return (
     <div className="App">
       <p>hola</p>
-      <Maze maze={game.maze.maze} />
+      {game && <Maze maze={game.maze.maze}/>}
+      <Player x={playerX} y={playerY} />
     </div>
   );
 }

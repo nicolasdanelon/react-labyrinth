@@ -6,9 +6,7 @@ const Slot = ({ type }) => {
     '#85db85'
   ];
   return (
-    <div className="slot" style={{ backgroundColor: colors[type--] }}>
-
-    </div>
+    <div className="slot" style={{ backgroundColor: colors[type] }} />
   )
 }
 

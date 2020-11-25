@@ -1,4 +1,5 @@
 import Maze from './Maze';
+import Character from './Character';
 
 export const BEGINNER = 1;  // PIECE OF CAKE
 export const EASY = 2;      // LETS ROCK
@@ -22,6 +23,11 @@ class Game {
     const maze = new Maze(this.difficulty);
     return maze.getMaze();
   }
+
+  setPlayerInitialPosition(x, y) {
+    const player = new Character(x, y);
+  }
+
   setEnd() {
 
   }
