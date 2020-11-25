@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 const Title = () => {
   return (
     <div className="App">
-      <Link to="/game">
-        Start
+      <Link to="/game/easy">
+        Play easy
       </Link>
-      <br/>
-      set maze:
-        5x5
+      <Link to="/game/hard">
+        Play hard
+      </Link>
     </div>
   );
 }

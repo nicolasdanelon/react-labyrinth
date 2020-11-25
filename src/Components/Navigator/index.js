@@ -11,7 +11,7 @@ import GameOver from '../../Sections/game-over';
 const Navigator = () => (
   <Router>
     <Switch>
-      <Route path="/game">
+      <Route path="/game/:difficulty">
         <Game />
       </Route>
       <Route path="/game-over">

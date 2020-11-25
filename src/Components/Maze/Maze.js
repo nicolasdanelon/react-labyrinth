@@ -5,9 +5,9 @@ export const END = 3;
 
 export const createMaze = difficulty => {
   switch (difficulty) {
-    case 1:
+    case 'easy':
       return easy();
-    case 2:
+    case 'hard':
       return hard();
     default:
       return easy();
@@ -32,8 +32,8 @@ const hard = () => {
     maze: [
       [START, PATH, PATH, PATH, PATH, PATH, BLOCK, BLOCK, BLOCK, BLOCK],
       [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, BLOCK, BLOCK, BLOCK, BLOCK],
-      [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, BLOCK, BLOCK, BLOCK, BLOCK],
-      [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, BLOCK, END, BLOCK, BLOCK],
+      [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, BLOCK, PATH, END, BLOCK],
+      [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, PATH, PATH, BLOCK, BLOCK],
       [BLOCK, BLOCK, PATH, PATH, PATH, PATH, BLOCK, BLOCK, BLOCK, BLOCK],
       [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH, PATH, PATH, PATH, PATH],
       [BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, BLOCK, PATH],
