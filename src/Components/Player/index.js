@@ -1,10 +1,26 @@
-import Controls from '../../Infrastructure/Controls';
+export const getPositionAfterMove = (x, y, position) => {
+  if (position.bottom) {
+    return { x, y: y + 60 };
+  }
+
+  if (position.top) {
+    return { x, y: y - 60 };
+  }
+
+  if (position.left) {
+    return { x: x - 60, y };
+  }
+
+  if (position.right) {
+    return { x: x + 60, y };
+  }
+
+  return { x, y };
+}
 
 const Player = ({ x, y }) => {
   return (
-    <Controls>
-      <div style={{ top: y, left: x }} className="player" />
-    </Controls>
+    <div style={{ top: playerY, left: playerX }} className="player" />
   );
 }
 

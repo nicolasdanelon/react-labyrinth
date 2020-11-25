@@ -1,7 +1,7 @@
 import { cloneElement } from 'react';
 import useKeyPress from './useKeyPress';
 
-const Controls = ({ children }) => {
+const Controls = ({ children = null }) => {
   const top = useKeyPress('w');
   const right = useKeyPress('d');
   const bottom = useKeyPress('s');

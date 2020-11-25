@@ -1,29 +1,31 @@
-import { useEffect } from 'react';
-import MazeGame from '../../Entities/Game'
+import { useRef } from 'react';
 import Maze from '../../Components/Maze';
-import Player from '../../Components/Player';
+import Player, { getPositionAfterMove } from '../../Components/Player';
+import Controls from '../../Components/Controls';
+import { createMaze } from '../../Components/Maze/Maze';
 
-let playerX = null;
-let playerY = null;
-let game = null;
+const Game = ({ difficulty = 1 }) => {
+  const maze = createMaze(difficulty);
+  const mazeRef = useRef('maze');
+  const { offsetTop, offsetLeft } = mazeRef.current;
 
-const mazePosition = document.getElementById('maze');
-
-const Game = ({ difficulty, position }) => {
-  const maze = new MazeGame(difficulty);
-  game = maze.start();
-
-  if (game !== null && mazePosition !== null) {
-    game.setPlayerInitialPosition(mazePosition.offsetLeft, mazePosition.offsetTop);
-    playerX = mazePosition.offsetLeft;
-    playerY = mazePosition.offsetTop
-  }
+  console.log({ offsetLeft, offsetTop, mazeRef, maze });
+  let x = offsetLeft;
+  let y = offsetTop;
 
   return (
-    <div className="App">
-      <p>hola</p>
-      {game && <Maze maze={game.maze.maze}/>}
-      <Player x={playerX} y={playerY} />
+    <div className="App" style={{ margin: 40 }}>
+      <Maze maze={maze.maze} mazeRef={mazeRef} />
+      {offsetLeft && offsetTop && (
+        <Controls>
+          {position => {
+            const { x: playerX, y: playerY } = getPositionAfterMove(x, y, position);
+            x = playerX;
+            y = playerY;
+            return (<Player x={playerX} y={playerY} />)
+          }}
+        </Controls>
+      )}
     </div>
   );
 }
