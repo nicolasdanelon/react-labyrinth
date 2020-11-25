@@ -20,7 +20,7 @@ export const getPositionAfterMove = (x, y, position) => {
 
 const Player = ({ x, y }) => {
   return (
-    <div style={{ top: playerY, left: playerX }} className="player" />
+    <div style={{ left: x, top: y }} className="player" />
   );
 }
 
