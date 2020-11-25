@@ -7,15 +7,12 @@ import {
 import Title from '../../Sections/title';
 import Game from '../../Sections/game';
 import GameOver from '../../Sections/game-over';
-import Controls from '../../Infrastructure/Controls';
 
 const Navigator = () => (
   <Router>
     <Switch>
       <Route path="/game">
-        <Controls>
-          <Game />
-        </Controls>
+        <Game />
       </Route>
       <Route path="/game-over">
         <GameOver />

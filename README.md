@@ -1,70 +1,57 @@
-# Getting Started with Create React Index
+# Labyrinth challenge
 
-This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
+We propose a challenge that requires you to build a small application that works as a game, using React.js.
 
-## Available Scripts
+The rules of the game are:
 
-In the project directory, you can run:
+![screen-initial](./docs/screen-initial.png)
 
-### `yarn start`
+- The game is played in a square grid of N x M cells. The amount of cells is configurable.
+- The player (the black and white circle) starts at a customizable initial position.
+- The player can move using the keyboard arrow keys (up, down, left and right).
+- The player has a limited amount of moves.
+- The goal of the game is to move from the initial cell (yellow) to the target cell (green) before running out of moves.
+- When the player reaches the target cell, they get a "You won!" message and they can't move anymore.
+- When the player runs out of moves, they get a "You lost!" message, and they can't move anymore.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screen-win](./docs/screen-win.png) ![screen-lose](./docs/screen-lose.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technical requirements
 
-### `yarn test`
+- You can add any library you consider that will help you build the game, as long as they are "regular web application" libraries. This means you can use libraries to help you with styles, state management, testing, etc. You cannot use libraries that are meant for building games.
+- You have to test the application / components, covering as much functionality as you can.
+- You have to build this application to the best of your abilities, considering customization and the possibility of extending it in the future.
+- You have to deliver the solution as a git repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Nice to have
 
-### `yarn build`
+Not doing any of the following will **not** get you penalized, and you are **not** required to do any of them. If you decide to do any of them, they might add to your qualification, always considering the quality of the code you create.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Use typescript
+- Visual improvements (e.g., the circle/cells could use images, or the movement could be animated)
+- Restart functionality
+- Level progression (win and go to the next level)
+- High scores
+- Level builder functionality
+- "Fog of war"
+- Anything you can think of that might add value!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Starting files
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For Semi-Sr and lower positions, we will be providing some initial files to get you started with some structure. For Sr positions, we expect you to start from scratch.
 
-### `yarn eject`
+## Examples
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Here are some examples of how we imagine that the game might end up looking. It's just for guidance.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Example with positions in grid
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![example-with-positions](./docs/example-with-positions.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Example with fog of war
 
-## Learn More
+![example-with-fog-of-war](./docs/example-with-fog-of-war.gif)
 
-You can learn more in the [Create React Index documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Example with different styles
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web Index
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![example-with-styles](./docs/example-with-styles.gif)

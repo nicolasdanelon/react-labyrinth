@@ -1,6 +1,10 @@
+import Controls from '../../Infrastructure/Controls';
+
 const Player = ({ x, y }) => {
   return (
-    <div style={{ top: y, left: x }} className="player" />
+    <Controls>
+      <div style={{ top: y, left: x }} className="player" />
+    </Controls>
   );
 }
 
