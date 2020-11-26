@@ -1,20 +1,24 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
-export const getPositionAfterMove = (x, y, position) => {
+const STEP = 60;
+
+export const getPositionAfterMove = (x, y, position, setPlayerPosition) => {
+  console.log({ x, y, position, setPlayerPosition });
+
   if (position.bottom) {
-    return { x, y: y + 60 };
+    return setPlayerPosition({ x, y: y + STEP });
   }
 
   if (position.top) {
-    return { x, y: y - 60 };
+    return setPlayerPosition({ x, y: y - STEP });
   }
 
   if (position.left) {
-    return { x: x - 60, y };
+    return setPlayerPosition({ x: x - STEP, y });
   }
 
   if (position.right) {
-    return { x: x + 60, y };
+    return setPlayerPosition({ x: x + STEP, y });
   }
 
   return { x, y };
@@ -23,15 +27,17 @@ export const getPositionAfterMove = (x, y, position) => {
 const Player = ({ x, y, position }) => {
   const [{ pX, pY }, setPlayerPosition] = useState({ x, y });
 
-  const { x: left, y: top } = getPositionAfterMove(x, y, position);
+  useEffect(() => {
+    getPositionAfterMove(x, y, position, setPlayerPosition);
 
-  /*setPlayerPosition(prevState => {
-    pX: prevState.pX + left,
-    pY: prevState.pY + top,
-  })*/
+    setPlayerPosition(prevState => ({
+      pX: prevState.pX + x,
+      pY: prevState.pY + y,
+    }))
+  }, [x, y, position])
 
   return (
-    <div style={{ left, top }} className="player" />
+    <div style={{ left: pX, top: pY }} className="player" />
   );
 }
 
